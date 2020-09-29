@@ -1,0 +1,28 @@
+{
+  "name": "quadro_de_avisos",
+  "version": "1.0.0",
+  "description": "Projeto De um Quadro de Avisos",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcos-06/Quadro_De_Avisos.git"
+  },
+  "author": "Marcos Eduardo De Sousa Basso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Marcos-06/Quadro_De_Avisos/issues"
+  },
+  "homepage": "https://github.com/Marcos-06/Quadro_De_Avisos#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
