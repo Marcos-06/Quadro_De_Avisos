@@ -9,7 +9,7 @@ function salvar(aviso) {
     //insert
     //db.insert(<obj com os dados>).into(<'<nome da tabela>'>)
     return  db.insert(aviso).into('avisos')
-        .then(id => {
+        .then(_ => {
             return {
                 tipo: "sucesso",
                 corpo: "Dados Inseridos Com Sucesso! "
