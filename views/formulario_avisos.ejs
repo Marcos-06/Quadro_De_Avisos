@@ -1,11 +1,73 @@
 <!-- Incluir o head -->
-<%- include('./partials/head') %> 
-  <body>
-    <h1 class="alert alert-primary"><span class="material-icons">campaign</span>Formulario de Cadrasto de Avisos</h1>
+<%- include('./partials/head') %>
 
-    <!-- Incluir -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <%- include('./partials/scripts_import') %> 
-  </body>
-  </html>
+<body>
+  <div class="container">
+    <br>
+    <br>
+
+    <a href="#"><i class="fas fa-arrow-left"></i> Voltar</a> 
+    
+    <br><br>
+
+    <% if (typeof msg !== 'undefined') { %>
+
+      <% if (msg.tipo == 'sucesso') { %>
+
+        <div class="alert alert-success alert-dismissible fade show p-3" role="alert">
+          <strong><i class="far fa-check-circle"></i> Sucesso!</strong> <%= msg.corpo %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      <% } %>
+
+      <% if (msg.tipo == 'erro') { %>
+
+        <div class="alert alert-danger alert-dismissible fade show p-3" role="alert">
+          <strong><i class="fas fa-times"></i> Erro! </strong> <%= msg.corpo %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% } %>
+
+    <% } %>
+
+    <div class="card shadow">
+      <div class="card-header bg-purple text-white pl-5 p-4">
+        <h2 class="card-title"><i class="far fa-plus-square"></i> Novo Aviso</h2>
+      </div>
+        <div class="card-body p-5">
+          <form action="/avisos/novo" method="POST">
+            <div class="form-group">
+              <label for="titulo">Titulo</label>
+              <input id="titulo" name="titulo" type="text" class="form-control" required placeholder="Digite o Titulo Do Aviso">
+            </div>
+            <div class="form-group">
+              <label for="data">Data</label>
+              <input id="data" name="data" type="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" cols="40" rows="5" class="form-control" required placeholder="Digite o Aviso Completo"></textarea>
+            </div>
+            <div class="form-group text-right">
+              <button name="submit" type="submit" class="btn btn-secondary">Limpar</button>
+              <button name="submit" type="submit" class="btn btn-primary" >Cadrastar</button>
+            </div>
+          </form>
+        </div><!-- Card-Body -->
+      </div><!-- Card -->
+    </div><!-- Container --> 
+
+    
+
+  <!-- Incluir -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <%- include('./partials/scripts_import') %>
+</body>
+
+</html>
