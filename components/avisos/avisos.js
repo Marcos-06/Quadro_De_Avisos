@@ -51,8 +51,8 @@ function editar(aviso , id){
  * Uma Mensagem De Erro
  */
 function selecionarTodos(){
-    return db.select('*').from('avisos')
-        .then(avisos =>{return avisos})
+    return db.select('*').from('avisos').orderBy('data', 'DESC')
+        .then(avisos => {return avisos})
         .catch(erro => {
             return {
                 tipo: "erro",
