@@ -44,7 +44,7 @@ function selecionarTodos(){
  * @param {int} id id do aviso
  */
 function excluir(id){
-    db.del().from('avisos').where('ID_avisos',id)
+    return db.del().from('avisos').where('ID_avisos',id)
 }
 
 module.exports = {salvar, selecionarTodos, excluir}
